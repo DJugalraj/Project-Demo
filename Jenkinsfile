@@ -1,3 +1,6 @@
+node {
+checkout scm
+docker.withRegistry('https://hub.docker.com/')
 stage('Docker Pull') {
       agent any
       steps {
