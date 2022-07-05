@@ -2,7 +2,7 @@ node {
     checkout scm
     stage ('pull latest image') {
     def image
-    docker.withRegistry('https://hub.docker.com/', credentialsId: 'doc17', passwordVariable: 'Macbook@2022') {
+    docker.withRegistry('https://hub.docker.com/', 'doc17/demopipeline') {
        image = docker.image('doc17/demopipeline:latest')
        image.pull()
     steps {
