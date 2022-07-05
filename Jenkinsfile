@@ -9,4 +9,5 @@ def remote = [:]
     stage('Remote SSH') {
        helm install apache /home/hscuser/pipeline-demo/
 	}
+    }
 }
