@@ -8,5 +8,6 @@ stage('Docker Pull') {
           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
           sh 'docker pull doc17/demopipeline:latest'
         }
-      }
+  }
+ }
 }
