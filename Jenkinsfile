@@ -11,3 +11,4 @@ stage('Docker Pull') {
  }
 }  
 }
+}
