@@ -7,3 +7,5 @@ sh 'docker login -u doc17 --passwd Macbook@2022'
 sh 'docker pull doc17/demopipeline:latest'
   }
 }
+}
+}
