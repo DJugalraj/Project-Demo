@@ -1,15 +1,12 @@
 pipeline {
     agent any
-    stages {
-	    stage('connect remote host') {
-		    steps {
-			    def remote = [:]
-			    remote.user = 'root'
-			    remote.password = 'abc123'
-			    remote.allowAnyHosts = true
-			    stage('Remote SSH') {
-				    helm install apache /home/hscuser/pipeline-demo  }
-	    		}
-	   }
-    }
+   steps{
+       sshagent(['50a58c64-cc98-414a-a4b7-9f08b2127bb7']) {
+       sh '''
+           echo "Deploy Application"
+           cd /home/hscuser/
+           helm install apache pipeline-demo/
+          '''
+}
+  }
 }
