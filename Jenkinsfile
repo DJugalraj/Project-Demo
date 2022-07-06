@@ -3,8 +3,8 @@ pipeline {
   stages {
       stage('Install apache') {
   node {
-  sshagent (credentials: ['deploy-dev']) {
-    sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 192.168.1.106 uname -a'
+  sshagent (credentials: ['50a58c64-cc98-414a-a4b7-9f08b2127bb7']) {
+    sh 'ssh -o StrictHostKeyChecking=no -l root@192.168.121.95 uname -a'
   }
 }
   }
