@@ -5,13 +5,13 @@ RUN apt-get install apache2 -y
 RUN apt-get install apache2-utils -y
 RUN apt-get clean
 RUN mkdir -p
-Run PATH=$PATH:/var/www/demo
+env PATH=$PATH:/var/www/demo
 RUN export PATH
 COPY index.html
-Run PATH=$PATH:/var/www/demo
+env PATH=$PATH:/var/www/demo
 RUN export PATH
 COPY demo.conf                                  
-Run PATH=$PATH:/etc/apache2/sites-available
+env PATH=$PATH:/etc/apache2/sites-available
 RUN export PATH
 RUN a2ensite demo.conf
 RUN a2dissite 000-default.conf
