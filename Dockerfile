@@ -1,7 +1,6 @@
 FROM ubuntu
 WORKDIR /
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install net-tools -y
 RUN apt-get install apache2 -y
 RUN apt-get install apache2-utils -y
 RUN apt-get clean
