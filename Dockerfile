@@ -10,6 +10,7 @@ RUN mkdir -p "$path1"
 RUN mkdir -p "$path2"
 COPY index.html "$path1"
 COPY demo.conf "$path2"
+RUN chmod a+w ./ -R
 RUN a2ensite demo.conf
 RUN a2dissite 000-default.conf
 #RUN service apache2 reload
