@@ -4,7 +4,10 @@ RUN apt-get update
 RUN apt-get install apache2 -y
 RUN apt-get install apache2-utils -y
 RUN apt-get clean
-RUN mkdir -p /var/www/demo
+ENV1 = "path1"
+RUN mkdir -p "$path1"
+ENV2 = "path2"
+RUN mkdir -p "$path2"
 COPY index.html /var/www/demo
 COPY demo.conf /etc/apache2/sites-available
 RUN a2ensite demo.conf
