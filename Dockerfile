@@ -6,7 +6,7 @@ RUN apt-get install apache2-utils -y
 RUN apt-get clean
 RUN mkdir -p
 COPY index.html 
-COPY demo.conf
+COPY demo.conf ../
 RUN a2ensite demo.conf
 RUN a2dissite 000-default.conf
 #RUN service apache2 reload
