@@ -1,12 +1,15 @@
 FROM ubuntu
 WORKDIR /
-RUN apt-get update
+RUN apt-get update && apt-get upgrade
+Run apt -y install net-tools
 RUN apt-get install apache2 -y
 RUN apt-get install apache2-utils -y
 RUN apt-get clean
-RUN mkdir -p /var/www/demo
-COPY index.html /var/www/demo
-COPY demo.conf /etc/apache2/sites-available
+ENV path1 = '/var/www/demo/'
+ENV path2 = '/etc/apache2/sites-available/'
+RUN mkdir -p "${path1}"
+COPY index.html "${path1}"
+COPY demo.conf "${path2}"
 RUN a2ensite demo.conf
 RUN a2dissite 000-default.conf
 #RUN service apache2 reload
