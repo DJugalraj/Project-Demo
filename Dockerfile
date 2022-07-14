@@ -7,7 +7,7 @@ RUN apt-get clean
 RUN mkdir -p
 COPY index.html
 COPY demo.conf
-RUN a2ensite demo.conf
+RUN a2ensite /etc/apache2/sites-available/demo.conf 
 RUN a2dissite 000-default.conf
 #RUN service apache2 reload
 #RUN '/bin/sh -c service apache2 reload'
