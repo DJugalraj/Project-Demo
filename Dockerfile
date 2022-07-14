@@ -10,8 +10,8 @@ RUN mkdir -p "$path1"
 COPY index.html "$path1"
 COPY demo.conf "$path2"
 RUN a2dissite 000-default.conf
-RUN service apache2 reload && a2ensite demo.conf
-#RUN service apache2 reload
-#RUN '/bin/sh -c service apache2 reload'
+RUN service apache2 start && a2ensite demo.conf
+#RUN service apache2 start
+RUN '/bin/sh -c service apache2 reload'
 EXPOSE 80
 CMD ["apache2ctl","-D","FOREGROUND"]
