@@ -13,5 +13,3 @@ RUN a2dissite 000-default.conf
 #RUN '/bin/sh -c service apache2 reload'
 EXPOSE 80
 CMD ["apache2ctl","-D","FOREGROUND"]
-ARG path1= 'mkdir -p /var/www/demo1'
-RUN echo $path1
