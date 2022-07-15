@@ -13,5 +13,3 @@ RUN a2dissite 000-default.conf
 #RUN '/bin/sh -c service apache2 reload'
 EXPOSE 80
 CMD ["apache2ctl","-D","FOREGROUND"]
-ARG PATH_ENV
-ENV PATH_ENV=$(PATH_ENV)
