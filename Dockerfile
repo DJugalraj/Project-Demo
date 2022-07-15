@@ -1,5 +1,5 @@
 FROM ubuntu
-WORKDIR /root
+WORKDIR /
 RUN apt-get update
 RUN apt-get install apache2 -y
 RUN apt-get install apache2-utils -y
@@ -9,7 +9,6 @@ ENV path2 = '/etc/apache2/sites-available/'
 RUN mkdir -p "$path1"
 COPY index.html "$path1"
 COPY demo.conf "$path2"
-RUN systemctl restart apache2.service
 RUN a2ensite demo.conf
 RUN a2dissite 000-default.conf
 #RUN service apache2 start
