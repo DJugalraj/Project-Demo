@@ -15,4 +15,3 @@ EXPOSE 80
 CMD ["apache2ctl","-D","FOREGROUND"]
 ARG PATH_ENV
 ENV PATH_ENV=$(PATH_ENV)
-docker build --build arg PATH-ENV=/var/www/demo/
