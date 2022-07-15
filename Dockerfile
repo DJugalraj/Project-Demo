@@ -4,7 +4,6 @@ RUN apt-get update
 RUN apt-get install apache2 -y
 RUN apt-get install apache2-utils -y
 RUN apt-get clean
-ENV path = ''
 RUN mkdir -p /var/www/demo/
 COPY index.html /var/www/demo/
 COPY demo.conf /etc/apache2/sites-available/
@@ -14,3 +13,6 @@ RUN a2dissite 000-default.conf
 #RUN '/bin/sh -c service apache2 reload'
 EXPOSE 80
 CMD ["apache2ctl","-D","FOREGROUND"]
+ARG PATH_ENV
+ENV PATH_ENV=$(PATH_ENV)
+docker build --build arg PATH-ENV=/var/www/demo/
