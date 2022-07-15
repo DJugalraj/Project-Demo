@@ -4,9 +4,9 @@ RUN apt-get update
 RUN apt-get install apache2 -y
 RUN apt-get install apache2-utils -y
 RUN apt-get clean
-ENV path = '/var/www/demo/'
-RUN mkdir -p "$path"
-COPY index.html "$path"
+ENV path = ''
+RUN mkdir -p /var/www/demo/
+COPY index.html /var/www/demo/
 COPY demo.conf /etc/apache2/sites-available/
 RUN a2ensite demo.conf
 RUN a2dissite 000-default.conf
